@@ -1,7 +1,7 @@
 {
-    "path":"/C:\\Users\\86175\\Desktop\\mybot1\\pic\\mao\\",
-	"ban_words":["科学上网","黑产","翻墙","huangse","setu"],
+    "path":"D:\\Zhier\\Zhier\\Python\\Mybot1\\pic\\mao",
+	"ban_words":["人工智障","人工智能"],
     "apikey":"",
-    "group":[],
-    "self_qq":"2013996860"
+    "group":[657668007],
+    "self_qq":"2872845621"
 }

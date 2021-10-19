@@ -2,6 +2,7 @@ import requests
 import json
 import os
 from random import choice
+from six_chess import *
 group = json.load(open("./config.json", encoding='utf-8'))["group"]
 apikey= json.load(open("./config.json", encoding='utf-8'))["apikey"]
 ban_words = json.load(open("./config.json", encoding='utf-8'))["ban_words"]
@@ -28,7 +29,7 @@ def add_data(msg,all_data):
 		return [False]
 	msg = msg.split("+")
 	if len(msg[0])< 3:
-		return [True,"长度要大于2呀~"]
+		return [True,"长度要大于2"]
 	for row in all_data:
 		if msg[0] == row[0]:
 			if msg[1] in row[1]:
@@ -64,7 +65,7 @@ def del_data(del_data,all_data):
 
 
 def ghs_pic(msg):
-    if msg in ["setu"]:
+    if msg in ["setu","涩图"]:
         try:
             req_url="https://api.lolicon.app/setu/"
             params = {"apikey":apikey}
@@ -81,7 +82,7 @@ def ghs_pic(msg):
     return [False]
 
 def hs_pic(msg):
-    if msg in ["huangse"]:
+    if msg in ["R18","色图"]:
         try:
             req_url="https://api.lolicon.app/setu/"
             params = {"apikey":apikey,"r18":"1"}
@@ -101,11 +102,11 @@ def hs_pic(msg):
 
 def mao_pic(msg):
     if msg in ["来张猫猫图", "来张猫图", "猫图", "喵图", "maomao","猫猫图","猫"]:
-        setu_list = os.listdir(path)
-        local_img_url = "[CQ:image,file=file://"+path+choice(setu_list)+"]"
-        return [True, local_img_url]
+      return [False]
+        # setu_list = os.listdir(path)
+        # local_img_url = "[CQ:image,file=file:///"+path+choice(setu_list)+"]"
+        # return [True, local_img_url]
     return [False]
-
 def detect_ban(msg,user_id,group_id):
 	if group_id not in group:
 		return [False]
@@ -117,5 +118,10 @@ def detect_ban(msg,user_id,group_id):
 		}
 		cq_url = "http://127.0.0.1:5700/set_group_ban"
 		requests.post(cq_url,data=data)
-		return [True,"不要说不该说的话啦~"]
+		return [True,"NG——WORDS"]
+	return [False]
+def six_game(msg,userId,groupId):
+	if msg in ["game1","playGame1","playsix"]:
+		GameStart(userId,groupId)
+		return [True,"GAME OVER"]
 	return [False]

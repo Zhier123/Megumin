@@ -8,8 +8,14 @@ def match(msg,talk_data):
 			return [True,row[1][0]]
 	return [False,choice(others_answer["no_answer"])]
 
-def talk_to_user(rev,talk_data):#这里可以DIY对私聊和群聊中@yes酱的操作
+def talk_to_user(rev,talk_data):
 	msg=rev["raw_message"]
+	user_id=rev["user_id"]
+	if(rev["message_type"]=="group"):
+		group_id = rev["group_id"]
+	else:
+		group_id = ""
+        #--------------------------------------------------------------------------------------从系统外退出
 	#--------------------------------------------------------------------------------------帮助页面
 	if_help = help_menu(msg)
 	if if_help[0] == True:
@@ -30,12 +36,15 @@ def talk_to_user(rev,talk_data):#这里可以DIY对私聊和群聊中@yes酱的�
 	if_setu = hs_pic(msg)
 	if if_setu[0] == True:
 		return if_setu[1]
-    #--------------------------------------------------------------------------------------发送猫猫图
+        #--------------------------------------------------------------------------------------发送猫猫图
 	if_setu = mao_pic(msg)
 	if if_setu[0] == True:
 		return if_setu[1]
+	if_game = six_game(msg,user_id,group_id)
+	if if_game[0] == True:
+		return if_game[1]
 	return match(msg,talk_data)[1]
-
+	
 def talk_to_gourp(rev,talk_data):#这里可以DIY对群聊的操作
 	msg=rev["raw_message"]
 	user_id=rev["user_id"]

@@ -4,16 +4,25 @@ from massage_flide import msg_talker
 
 talker = msg_talker()
 print("start")
-
 while True:
     try:
         rev = rev_msg()
         if rev == None:
-            continue
+            continue    
     except:
         continue
     if rev["post_type"] == "message":
-        print(rev) #需要功能自己DIY
+        print(" ")
+        if(rev['sender']['user_id']==792971844 and rev['message']=='Drain'):
+            print("program_end")#这是一个终结指令 如果来自我的主号发送了Drain 则关闭程序并向主号回报
+            send_message("off\nline",792971844,"private")
+            #send_message("offline",657668007,"group")
+            break
+
+        #在main.py 中打印 接受到 的所有消息   
+        if(rev['group_id']):
+            print('from'+format(str(rev['group_id'])))
+        print(rev['sender']['nickname']+': '+rev['message']) #需要功能自己DIY
         if rev["message_type"] == "private": #私聊
             talker.private_msg(rev)
         elif rev["message_type"] == "group": #群聊

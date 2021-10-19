@@ -8,7 +8,7 @@ def send_message(msg,qq_id,qq_type):
 			'message':msg,
 			'auto_escape':False
 		}
-		cq_url = "http://127.0.0.1:5700/send_private_msg"
+		cq_url =" http://127.0.0.1:5700/send_group_message"
 		rev = requests.post(cq_url,data=data)
 	elif qq_type == "group":
 		data = {

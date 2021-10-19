@@ -11,7 +11,7 @@ Content-Type: text/html
 
 def request_to_json(msg):
     for i in range(len(msg)):
-        if msg[i]=="{" and msg[-1]=="}":
+        if msg[i]=="{" and msg[-2]=="}":
             return json.loads(msg[i:])
     return None
 
