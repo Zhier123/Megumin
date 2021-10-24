@@ -219,3 +219,11 @@
 [2021-10-19 19:34:48] [WARNING]: 上报Event到 HTTP 服务器 127.0.0.1:5701 时出现错误: Post "http://127.0.0.1:5701": net/http: HTTP/1.x transport connection broken: unexpected EOF 将重试. 
 [2021-10-19 19:34:48] [WARNING]: 上报Event数据 {"group_id":657668007,"message_id":1362191833,"notice_type":"group_recall","operator_id":2872845621,"post_type":"notice","self_id":2872845621,"time":1634643263,"user_id":2872845621}
  到 127.0.0.1:5701 失败: Post "http://127.0.0.1:5701": net/http: HTTP/1.x transport connection broken: unexpected EOF 
+[2021-10-19 20:24:03] [WARNING]: 警告: 心跳功能已关闭，若非预期，请检查配置文件。 
+[2021-10-19 20:24:05] [WARNING]: 上报Event到 HTTP 服务器 127.0.0.1:5701 时出现错误: Post "http://127.0.0.1:5701": net/http: HTTP/1.x transport connection broken: unexpected EOF 将重试. 
+[2021-10-19 20:24:05] [WARNING]: 上报Event数据 {"anonymous":null,"font":0,"group_id":657668007,"message":"心理学史","message_id":-358405237,"message_seq":99578,"message_type":"group","post_type":"message","raw_message":"心理学史","self_id":2872845621,"sender":{"age":0,"area":"","card":"🐶","level":"","nickname":"Palpitate","role":"member","sex":"unknown","title":"唯一受苦者","user_id":2075641943},"sub_type":"normal","time":1634646245,"user_id":2075641943}
+ 到 127.0.0.1:5701 失败: Post "http://127.0.0.1:5701": net/http: HTTP/1.x transport connection broken: unexpected EOF 
+[2021-10-19 20:24:17] [WARNING]: 上报Event到 HTTP 服务器 127.0.0.1:5701 时出现错误: Post "http://127.0.0.1:5701": net/http: HTTP/1.x transport connection broken: unexpected EOF 将重试. 
+[2021-10-19 20:24:17] [WARNING]: 上报Event数据 {"anonymous":null,"font":0,"group_id":657668007,"message":"这老师上课爱吹牛逼和发散思维","message_id":-1650189539,"message_seq":99579,"message_type":"group","post_type":"message","raw_message":"这老师上课爱吹牛逼和发散思维","self_id":2872845621,"sender":{"age":0,"area":"","card":"🐶","level":"","nickname":"Palpitate","role":"member","sex":"unknown","title":"唯一受苦者","user_id":2075641943},"sub_type":"normal","time":1634646257,"user_id":2075641943}
+ 到 127.0.0.1:5701 失败: Post "http://127.0.0.1:5701": net/http: HTTP/1.x transport connection broken: unexpected EOF 
+[2021-10-19 20:24:17] [WARNING]: 群消息发送失败: 信息为空. MSG:  
